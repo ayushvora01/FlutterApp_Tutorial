@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_catalog/pages/home_page.dart';
 import 'package:flutter_catalog/pages/login_page.dart';
 import 'package:flutter_catalog/utils/routes.dart';
+import 'package:flutter_catalog/widgets/themes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,10 +20,8 @@ class MyApp extends StatelessWidget {
     // bringVegetables();
     return MaterialApp(
       themeMode: ThemeMode.light,
-      theme: ThemeData(primarySwatch: Colors.purple),
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
-      ),
+      theme: MyThemes.lightTheme(context),
+      darkTheme: MyThemes.darkTheme(context),
       debugShowCheckedModeBanner: false,
       initialRoute: "/home",
       routes: {
@@ -32,7 +31,4 @@ class MyApp extends StatelessWidget {
       },
     );
   }
-  // bringVegetables({bool theli = false, int rupees = 100}) {
-  //   //take Cycle
-  // }
 }
